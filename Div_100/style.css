@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    width: 100vh;
+    padding: 1em;
+    margin: 0;
+    margin-left: calc(50vw - 50vh);
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0.3em;
+    font: 800 100% system-ui;
+    background: black;
+}
+
+div {
+    border: 6px solid hsl(calc(var(--i)*3.6), 55%, 55%);
+    animation: sc 5s infinite;
+    animation-delay: calc(var(--i)*0.013s);
+    transform: rotate(13deg) scale(1);
+}
+
+@keyframes sc {
+    0% {
+        transform: rotate(13deg) scale(1);
+    }
+
+    20% {
+        transform: rotate(13deg) scale(0.7);
+    }
+
+    40% {
+        transform: rotate(103deg) scale(0.7);
+    }
+    50% {
+        transform: rotate(103deg) scale(1);
+    }
+    60% {
+        transform: rotate(103deg) scale(0.7);
+    }
+    80% {
+        transform: rotate(13deg) scale(0.7);
+    }
+    100% {
+        transform: rotate(13deg) scale(1);
+    }
+}

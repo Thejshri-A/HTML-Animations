@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>100 divs</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <script>
+            let div = (_, i ) => `<div style ='--i:${i}'></div>`;
+            document.body.innerHTML = [...Array(100)].map(div).join("");
+        </script>
+    </body>
+</html>
