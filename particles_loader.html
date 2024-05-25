@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Particles Loader</title>
+    </head>
+    <body bgcolor="black">
+        <canvas id="canvas"></canvas>
+        <script>
+            "use strict";
+
+            var W, H, c, ctx;
+            var circles = [];
+
+            const random = (max=1, min=0) => Math.random() * (max - min) + min;
+
+            const clear = () => ctx.clearRect(0, 0, W, H);
+
+            const animate = () => {
+                clear();
+                circles.map(x=>x.update());
+                window.requestAnimationFrame(animate);
+            };
+
+            const init = () =>{
+                c= document.getElementById('canvas');
+                c.width = W = window.innerWidth;
+                c.height = H = window.innerHeight;
+                ctx = c.getContext("2d");
+                for(let i=0; i<1000; i++) circles.push(new Circle());
+                animate();
+            };
+
+            class Circle{
+                constructor() {
+                    this.color = random(220,180);
+                    this.angle = random(Math.PI*2);
+                    this.rad= random(1.5, 0.5);
+                    this.radX = random(170, 75);
+                    this.radY = random(170, 75);
+
+                }
+                draw(){
+                    ctx.beginPath();
+                    ctx.fillStyle = 'hsl(' + this.color + ',100%, 50%)';
+                    ctx.arc(this.x, this.y, this.rad, 0, Math.PI*2, true);
+                    ctx.fill();
+                    ctx.closePath();
+                }
+                update() {
+                    this.angle +=0.01;
+                    this.x = W/2 + this.radX*Math.cos(this.angle);
+                    this.y = H/2 + this.radY*Math.sin(this.angle);
+                    this.draw();
+                }
+            }
+
+            window.onload = init;
+        </script>
+
+    </body>
+</html>
