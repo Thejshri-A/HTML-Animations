@@ -59,16 +59,18 @@ span{
     content:'';
     width: 50%;
     height: 180%;
-    background: #fff;
+    background: tomato;
     transform: rotate(45deg);
+}
+
+.animated_card2:hover::before{
     animation: animate2 2s linear infinite;
 }
 
-/* .animated_card2:hover::before{
-    animation: animate2 2s linear infinite;
-} */
-
 @keyframes animate2{
+    50%{
+        filter: hue-rotate(350deg)
+    }
     from{
         transform: rotate(0deg);
     }
