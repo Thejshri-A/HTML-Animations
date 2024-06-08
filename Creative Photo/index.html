@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utd-8">
+        <title>Circular Photo</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="menu">
+            <div class="toggle"><span>Daddy</span></div>
+                <li style="--i:0;">
+                    <img src="image-paris.jpeg" alt="">
+                </li>
+                <li style="--i:1;">
+                    <img src="image-paris.jpeg" alt="">
+                </li>
+                <li style="--i:2;">
+                    <img src="image-paris.jpeg" alt="">
+                </li>
+                <li style="--i:3;">
+                    <img src="image-paris.jpeg" alt="">
+                </li>
+                <li style="--i:4;">
+                    <img src="image-paris.jpeg" alt="">
+                </li>
+                <li style="--i:5;">
+                    <img src="image-paris.jpeg" alt="">
+                </li>
+                <li style="--i:6;">
+                    <img src="image-paris.jpeg" alt="">
+                </li>
+                <li style="--i:7;">
+                    <img src="image-paris.jpeg" alt="">
+                </li>
+            </div>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <script>
+                let toggle= document.querySelector('.toggle');
+                let menu= document.querySelector('.menu');
+                toggle.onclick = function(){
+                    menu.classList.toggle('active')
+                }
+            </script>
+    </body>
+</html>
