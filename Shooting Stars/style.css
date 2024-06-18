@@ -15,7 +15,7 @@ section{
     background: url(Earth1.jpg);
     background-position-x: center;
     background-size: cover;
-    animation: animateBg 5s linear infinite;
+    animation: animateBg 50s linear infinite;
 }
 
 @keyframes animateBg{
@@ -23,7 +23,7 @@ section{
         transform: scale(1);
     }
     50%{
-        transform: scale(1.0);
+        transform: scale(1.2);
     }
 }
 
@@ -43,7 +43,6 @@ span::before{
     content:'';
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     width: 300px;
     height: 1px;
     background: linear-gradient(90deg, #fff, transparent);
